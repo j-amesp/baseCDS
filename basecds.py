@@ -139,11 +139,11 @@ def evaluate_file(source_bytes=None, path=None, stream=False, blocked_types=None
 
 # Use it one a blue client (low side).
 def blue_call_on_magika(source_bytes=None, path=None, stream=False):
-    return evaluate_file(source_bytes, path, stream, blocked_types=blocked_types_blue, confidence_threshold=0.75)
+    return evaluate_file(source_bytes, path, stream, blocked_types=blocked_types_blue, confidence_threshold=0.75,blue_to_red=True)
 
 # Use it on a red client (high side).
 def red_call_on_magika(source_bytes=None, path=None, stream=False):
-    return evaluate_file(source_bytes, path, stream, blocked_types=blocked_types_red, confidence_threshold=0.7, red_to_blue=True)
+    return evaluate_file(source_bytes, path, stream, blocked_types=blocked_types_red, confidence_threshold=0.7, blue_to_red=False)
 
 # Sample test
 def test():
