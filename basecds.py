@@ -99,7 +99,7 @@ def scan_content(data):
     return text
 
 # The main function for file evaluation which uses all the helpers.
-def evaluate_file(source_bytes=None, path=None, stream=False, blocked_types=None, confidence_threshold=0.75, red_to_blue=False):
+def evaluate_file(source_bytes=None, path=None, stream=False, blocked_types=None, confidence_threshold=0.75, blue_to_red=False):
     if source_bytes is None and path is None:
         raise ValueError("No file assessment possible: both bytes and path are None.")
 
@@ -130,7 +130,7 @@ def evaluate_file(source_bytes=None, path=None, stream=False, blocked_types=None
         raise ValueError(f"Disallowed file type: {label}")
 
     # Content scanning for red-to-blue
-    if red_to_blue:
+    if blue_to_red:
         cleaned = bleach.clean(scan_content(file_data))
         return label, score, cleaned
     else:
