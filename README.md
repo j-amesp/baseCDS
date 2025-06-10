@@ -40,7 +40,7 @@ It uses **Magika** (by Google) to accurately detect file types using AI, **regex
 
  - Red-side calls red_call_on_magika()
 
- - RED → BLUE traffic is additionally sanitised with bleach.clean() after content scan
+ - BLUE → RED traffic is additionally sanitised with bleach.clean() after content scan
 
  - File type is verified with high-confidence (≥ 0.75 by default)
 
